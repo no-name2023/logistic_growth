@@ -60,3 +60,37 @@ ggplot(aes(t,N), data = growth_data) +
   ylab("y") +
   
   scale_y_continuous(trans='log10')
+
+# Script to plot data and model
+
+### Loading in the data.  
+
+growth_data <- read.csv("experiment1.csv")
+
+### Here I am defining the logistic growth model. 
+
+logistic_fun <- function(t) {
+  
+  N <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
+  
+  return(N)
+  
+}
+
+### Here I am defining the parameters of the logistic growth model defined above. 
+
+N0 <- 6.903e+00 #
+  
+r <- 9.990e-03 #
+  
+K <- 5.979e+10 #
+
+### Here I am plotting the logistic growth model and comparing it agianst the data. 
+
+ggplot(aes(t,N), data = growth_data) +
+  
+  geom_function(fun=logistic_fun, colour="red") +
+  
+  geom_point() +
+
+  scale_y_continuous(trans='log10') 
