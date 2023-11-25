@@ -11,7 +11,7 @@ growth_data <- read.csv("experiment1.csv")
 
 # Case 1. K >> N0, t is small
 
-### Here I am setting the carrying capacity (K) to be much bigger than the population size (N) in order to estimate the starting population size (y-intercept) and the gradient (r). I was able to do this because the model acts as an expoential. The line of code below is filtering the data and creating a natural logarithm of the values in the N column to make the model linear. The model says that the y-intercept (No) = 6.903e+00 and the gradient (r) = 9.990e-03.  
+### Here I am setting the carrying capacity (K) to be much bigger than the population size (N) in order to estimate the starting population size (y-intercept) and the gradient (r). I was able to do this because the model acts as an expoential. The line of code below is filtering the data and creating a natural logarithm of the values in the N column to make the model linear. The model says that the y-intercept (N0) = 6.903e+00 and the gradient (r) = 9.990e-03.  
 
 data_subset1 <- growth_data %>% filter(t<1600) %>% mutate(N_log = log(N))
 
@@ -97,9 +97,9 @@ ggplot(aes(t,N), data = growth_data) +
 
 # Results
 
-### Using the experiment1.csv file and the model shown above I have managed to estimate the initial popualtion size (No), the population growth rate (r) and the carying capacity (K). The results are shown below: 
+### Using the experiment1.csv file and the model shown above I have managed to estimate the initial popualtion size (N0), the population growth rate (r) and the carying capacity (K). The results are shown below: 
 
-#### No = 6.903e+00
+#### N0 = 6.903e+00
 
 #### r = 9.990e-03
 
