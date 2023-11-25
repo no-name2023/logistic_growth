@@ -25,4 +25,4 @@ ggplot(aes(t,N), data = growth_data) +
   
   scale_y_continuous(trans='log10')
 
-git config --global user.email "<zoe.george@queens.ox.ac.uk>"
+
