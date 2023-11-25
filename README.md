@@ -105,4 +105,6 @@ ggplot(aes(t,N), data = growth_data) +
 
 #### K = 5.979e+10
 
+### Overall, in this exercise I have shown that the data does align with the model. However, there is a slight difference due to differences in the values chosen and the actual population sizes. 
+
 
