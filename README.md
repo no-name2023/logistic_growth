@@ -97,7 +97,7 @@ ggplot(aes(t,N), data = growth_data) +
 
 # Results
 
-### Using the experiment1.csv file the model showed: 
+### Using the experiment1.csv file and the model shown above I have managed to estimate the initial popualtion size (No), the population growth rate (r) and the carying capacity (K). The results are shown below: 
 
 #### No = 6.903e+00
 
