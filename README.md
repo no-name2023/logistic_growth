@@ -94,3 +94,15 @@ ggplot(aes(t,N), data = growth_data) +
   geom_point() +
 
   scale_y_continuous(trans='log10') 
+
+# Results
+
+### Using the experiment1.csv file the model showed: 
+
+#### No = 6.903e+00
+
+#### r = 9.990e-03
+
+#### K = 5.979e+10
+
+
