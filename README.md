@@ -107,4 +107,6 @@ ggplot(aes(t,N), data = growth_data) +
 
 ### Overall, in this exercise I have shown that the data does align with the model. However, there is a slight difference due to differences in the values chosen and the actual population sizes. 
 
+# Question 2: Calculating population size at t = 4980 
+
 
