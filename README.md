@@ -109,4 +109,8 @@ ggplot(aes(t,N), data = growth_data) +
 
 # Question 2: Calculating population size at t = 4980 
 
+N0 = 6.903e+00
+r = 9.990e-03
+
+N(t) = N0e^rt 
 
