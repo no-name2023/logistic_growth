@@ -112,5 +112,5 @@ ggplot(aes(t,N), data = growth_data) +
 N0 = 6.903e+00
 r = 9.990e-03
 
-N(t) = N0e^rt 
+Using the exponential growth formula: N(t) = N0e^rt 
 
