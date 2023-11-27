@@ -109,16 +109,35 @@ ggplot(aes(t,N), data = growth_data) +
 
 # Question 2: Calculating population size at t = 4980 
 
-Given the estimates for initial population size and the population growth rate are: 
+#### Given the estimates for initial population size and the population growth rate are: 
 
 N0 = 6.903e+00
 r = 9.990e-03
 
-Using the exponential growth formula: N(t) = N0e^rt I can calculate the population size at t= 4980 by substituting these numbers into this formula. 
+##### Using the exponential growth formula: N(t) = N0e^rt I can calculate the population size at t= 4980 by substituting these numbers into this formula. 
 
 N(t) = 6.903e+00 x e^ ((9.990e-03) x 4980)
 
-N(t) = 
+N0 <- 6.903e+00
+r <- 9.990e-03
+t <- 4980
 
-(write this in a way that code works)
+N_4980_exp <- N0 * exp(r * t)
+
+N(t) = 2.78788725821951e+22 
+
+#### Then I looked at the population size at t = 4980 under a logistic growth model when the carying capacity (K) = 5.979e+10: 
+
+N0 <- 6.903e+00
+r <- 9.990e-03
+t <- 4980
+K <- 5.979e+10
+
+N_4980_logistic <- K / (1 + ((K - N0) / N0) * exp(-r * t))
+
+N(t) = 59789999999.8718
+
+#### As we can see from these values, the population is much larger at time 4980 minutes under an exponential growth model comapred to a logitsic growth model. 
+
+
 
