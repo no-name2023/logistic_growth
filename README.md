@@ -135,9 +135,15 @@ K <- 5.979e+10
 
 N_4980_logistic <- K / (1 + ((K - N0) / N0) * exp(-r * t))
 
-N(t) = 59789999999.8718
+N(t) = 59,789,999,999.8718       
 
-#### As we can see from these values, the population is much larger at time 4980 minutes under an exponential growth model comapred to a logitsic growth model. 
+#### Population size at t = 4980 under an exponential growth model = 2.78788725821951e+22 
+
+#### Population size at t = 4980 under a logistic growth model = 59789999999.8718
+
+#### As we can see from these values, the population is much larger at time 4980 minutes under an exponential growth model comapred to a logitsic growth model. This is because under a logistic growth model the population can only grow up to a certain point (the carying capacity), whereas in the exponential growth model the population can keep growing exponentially. Under the logistic growth model the population has nearly reached carrying capacity by time 4980 minutes. Under the exponential growth model the popualtion has exceeded the carying capcity which is not a reasonable thing to predict. This is because in the real world the population would stop growing once it reaches the carying capacity because there are limited resources and a limited amount of space for a population to use.
+
+
 
 
 
