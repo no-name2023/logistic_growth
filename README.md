@@ -11,7 +11,7 @@ growth_data <- read.csv("experiment1.csv")
 
 # Case 1. K >> N0, t is small
 
-### Here I am setting the carrying capacity (K) to be much bigger than the population size (N) in order to estimate the starting population size (y-intercept) and the gradient (r). I was able to do this because the model acts as an expoential. The line of code below is filtering the data and creating a natural logarithm of the values in the N column to make the model linear. The model says that the y-intercept (N0) = 6.903e+00 and the gradient (r) = 9.990e-03.  
+#### Here I am setting the carrying capacity (K) to be much bigger than the population size (N) in order to estimate the starting population size (y-intercept) and the gradient (r). I was able to do this because the model acts as an expoential. The line of code below is filtering the data and creating a natural logarithm of the values in the N column to make the model linear. The model says that the y-intercept (N0) = 6.903e+00 and the gradient (r) = 9.990e-03.  
 
 data_subset1 <- growth_data %>% filter(t<1600) %>% mutate(N_log = log(N))
 
@@ -21,7 +21,7 @@ summary(model1)
 
 # Case 2. N(t) = K
 
-### Here I am looking at the carying capacity because at N(t) = K the population size is equal to the carying capacity. In the lines of code below I am creating another subset of data where the values of t are greater than 2000 and then again fitting a linear model and looking at the intercept and gradient, as well as other information about the model. From the summary the model says K = 5.979e+10. 
+#### Here I am looking at the carying capacity because at N(t) = K the population size is equal to the carying capacity. In the lines of code below I am creating another subset of data where the values of t are greater than 2000 and then again fitting a linear model and looking at the intercept and gradient, as well as other information about the model. From the summary the model says K = 5.979e+10. 
 
 data_subset2 <- growth_data %>% filter(t>2000)
 
@@ -97,7 +97,7 @@ ggplot(aes(t,N), data = growth_data) +
 
 # Results
 
-### Using the experiment1.csv file and the model shown above I have managed to estimate the initial popualtion size (N0), the population growth rate (r) and the carying capacity (K). The results are shown below: 
+#### Using the experiment1.csv file and the model shown above I have managed to estimate the initial popualtion size (N0), the population growth rate (r) and the carying capacity (K). The results are shown below: 
 
 #### N0 = 6.903e+00
 
@@ -105,7 +105,7 @@ ggplot(aes(t,N), data = growth_data) +
 
 #### K = 5.979e+10
 
-### Overall, in this exercise I have shown that the data does align with the model. However, there is a slight difference due to differences in the values chosen and the actual population sizes. 
+#### Overall, in this exercise I have shown that the data does align with the model. However, there is a slight difference due to differences in the values chosen and the actual population sizes. 
 
 # Question 2: Calculating population size at t = 4980 
 
@@ -114,7 +114,7 @@ ggplot(aes(t,N), data = growth_data) +
 N0 = 6.903e+00
 r = 9.990e-03
 
-##### Using the exponential growth formula: N(t) = N0e^rt I can calculate the population size at t= 4980 by substituting these numbers into this formula. 
+#### Using the exponential growth formula: N(t) = N0e^rt I can calculate the population size at t= 4980 by substituting these numbers into this formula. 
 
 N(t) = 6.903e+00 x e^ ((9.990e-03) x 4980)
 
