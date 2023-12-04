@@ -148,7 +148,6 @@ N(t) = 59,789,999,999.8718
 ### Link for the R code of how I created the graph: 
 https://github.com/zoe-george/logistic_growth/blob/221f7c87586fd946c0316384f3beda6e54765650/Graphs.R
 
-### Link for the graph comparing exponential and logistic growth curves: 
-https://github.com/zoe-george/logistic_growth/blob/beff160f741ce666586eede43257fb8ee20c0a3e/Rplot.pdf
-
-
+### Graph comparing exponential and logistic growth curves: 
+![graph to show comparison of expoential and logisitc growth](https://github.com/zoe-george/logistic_growth/blob/964a4e3dd803c03f112c06a470bb48d2237c7835/graph%20comparing%20exponential%20and%20logstic%20growth%20.png
+)
