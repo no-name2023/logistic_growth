@@ -121,6 +121,7 @@ ggplot(aes(t,N), data = growth_data) +
 #### Given the estimates for initial population size and the population growth rate are: 
 
 N0 = 6.903e+00
+
 r = 9.990e-03
 
 #### Using the exponential growth formula: N(t) = N0e^rt I can calculate the population size at t= 4980 by substituting these numbers into this formula. 
