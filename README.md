@@ -1,10 +1,10 @@
 # Script to estimate the model parameters using a linear approximation
 
 ### Installing and loading the packages
-
+```{r echo=TRUE}
 install.packages("dplyr")
 library(dplyr)
-
+``` 
 ### Loading in the data 
 
 growth_data <- read.csv("experiment1.csv")
