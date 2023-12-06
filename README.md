@@ -6,39 +6,43 @@ install.packages("dplyr")
 library(dplyr)
 ``` 
 ### Loading in the data 
-
+```{r echo=TRUE}
 growth_data <- read.csv("experiment1.csv")
+```
 
 # Case 1. K >> N0, t is small
 
 #### Here I am setting the carrying capacity (K) to be much bigger than the population size (N) in order to estimate the starting population size (y-intercept) and the gradient (r). I was able to do this because the model acts as an expoential. The line of code below is filtering the data and creating a natural logarithm of the values in the N column to make the model linear. The model says that the y-intercept (N0) = 6.903e+00 and the gradient (r) = 9.990e-03.  
-
+```{r echo=TRUE}
 data_subset1 <- growth_data %>% filter(t<1600) %>% mutate(N_log = log(N))
 
 model1 <- lm(N_log ~ t, data_subset1)
 
 summary(model1)
+```
 
 # Case 2. N(t) = K
 
 #### Here I am looking at the carying capacity because at N(t) = K the population size is equal to the carying capacity. In the lines of code below I am creating another subset of data where the values of t are greater than 2000 and then again fitting a linear model and looking at the intercept and gradient, as well as other information about the model. From the summary the model says K = 5.979e+10. 
-
+```{r echo=TRUE}
 data_subset2 <- growth_data %>% filter(t>2000)
 
 model2 <- lm(N ~ 1, data_subset2)
 summary(model2) 
+```
 
 # Script to plot the logistic growth data
 
 ### Below I am reading in the CSV file, installing and loading the ggplot2 package. 
-
+```{r echo=TRUE}
 growth_data <- read.csv("experiment1.csv")
 
 install.packages("ggplot2")
 library(ggplot2)
+```
 
 ### Here I am creating a scatter plot with the variable N and t. 
-
+```{r echo=TRUE}
 ggplot(aes(t,N), data = growth_data) +
   
   geom_point() +
@@ -48,9 +52,10 @@ ggplot(aes(t,N), data = growth_data) +
   ylab("y") +
   
   theme_bw()
+```
 
 ### Below I am performing a logarithmic transformation to help visualize the data more clearly. 
-
+```{r echo=TRUE}
 ggplot(aes(t,N), data = growth_data) +
   
   geom_point() +
@@ -60,15 +65,16 @@ ggplot(aes(t,N), data = growth_data) +
   ylab("y") +
   
   scale_y_continuous(trans='log10')
+```
 
 # Script to plot data and model
 
 ### Loading in the data.  
-
+```{r echo=TRUE}
 growth_data <- read.csv("experiment1.csv")
 
 ### Here I am defining the logistic growth model. 
-
+```{r echo=TRUE}
 logistic_fun <- function(t) {
   
   N <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
@@ -76,17 +82,19 @@ logistic_fun <- function(t) {
   return(N)
   
 }
+```
 
 ### Here I am defining the parameters of the logistic growth model defined above. 
-
+```{r echo=TRUE}
 N0 <- 6.903e+00 #
   
 r <- 9.990e-03 #
   
 K <- 5.979e+10 #
+```
 
 ### Here I am plotting the logistic growth model and comparing it agianst the data. 
-
+```{r echo=TRUE}
 ggplot(aes(t,N), data = growth_data) +
   
   geom_function(fun=logistic_fun, colour="red") +
@@ -94,6 +102,7 @@ ggplot(aes(t,N), data = growth_data) +
   geom_point() +
 
   scale_y_continuous(trans='log10') 
+```
 
 # Results
 
@@ -115,7 +124,7 @@ N0 = 6.903e+00
 r = 9.990e-03
 
 #### Using the exponential growth formula: N(t) = N0e^rt I can calculate the population size at t= 4980 by substituting these numbers into this formula. 
-
+```{r echo=TRUE}
 N(t) = 6.903e+00 x e^ ((9.990e-03) x 4980)
 
 N0 <- 6.903e+00
@@ -123,17 +132,18 @@ r <- 9.990e-03
 t <- 4980
 
 N_4980_exp <- N0 * exp(r * t)
-
+```
 N(t) = 2.78788725821951e+22 
 
 #### Then I looked at the population size at t = 4980 under a logistic growth model when the carying capacity (K) = 5.979e+10: 
-
+```{r echo=TRUE}
 N0 <- 6.903e+00
 r <- 9.990e-03
 t <- 4980
 K <- 5.979e+10
 
 N_4980_logistic <- K / (1 + ((K - N0) / N0) * exp(-r * t))
+```
 
 N(t) = 59,789,999,999.8718       
 
