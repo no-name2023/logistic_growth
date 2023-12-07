@@ -160,4 +160,4 @@ As we can see from these values, the population is much larger at time 4980 minu
 https://github.com/no-name2023/logistic_growth/blob/2a63ac1e6128d9cffbe150b76e31e2129f7a6815/Graphs.R
 
 ### Graph comparing exponential and logistic growth curves: 
-![graph to show comparison of expoential and logisitc growth](https://github.com/no-name2023/logistic_growth/blob/ad51a3b929f8c6e139fdc358080e4948a06c45b0/graph%20comparing%20exponential%20and%20logstic%20growth%20.png)
+![graph to show comparison of expoential and logisitc growth](https://github.com/no-name2023/logistic_growth/blob/45fad4a8ac9decfa880f6d4b0651284603530f06/Exponential_logistic_growth_graph.png)
