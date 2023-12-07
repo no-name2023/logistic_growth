@@ -12,7 +12,7 @@ growth_data <- read.csv("experiment1.csv")
 
 # Case 1. K >> N0, t is small
 
-Here I am setting the carrying capacity (K) to be much bigger than the population size (N) in order to estimate the starting population size (y-intercept) and the gradient (r). I was able to do this because the model acts as an expoential. The line of code below is filtering the data and creating a natural logarithm of the values in the N column to make the model linear. The model says that the y-intercept (N0) = 6.903e+00 and the gradient (r) = 9.990e-03.  
+Here I am setting the carrying capacity (K) to be much bigger than the population size (N) in order to estimate the starting population size (y-intercept) and the gradient (r). I was able to do this because the model acts as an expoential. The line of code below is filtering the data and creating a natural logarithm of the values in the N column to make the model linear. The model says that the y-intercept (N0) = 995.256 and the gradient (r) = 9.990e-03. This shows us that the starting population size is 995.256. 
 ```{r echo=TRUE}
 data_subset1 <- growth_data %>% filter(t<1600) %>% mutate(N_log = log(N))
 
@@ -86,7 +86,7 @@ logistic_fun <- function(t) {
 
 ### Here I am defining the parameters of the logistic growth model defined above. 
 ```{r echo=TRUE}
-N0 <- 6.903e+00 #
+N0 <- 995.256 #
   
 r <- 9.990e-03 #
   
@@ -108,37 +108,37 @@ ggplot(aes(t,N), data = growth_data) +
 
 #### Using the experiment1.csv file and the model shown above I have managed to estimate the initial popualtion size (N0), the population growth rate (r) and the carying capacity (K). The results are shown below: 
 
-#### N0 = 6.903e+00
+#### N0 = 995.256
 
 #### r = 9.990e-03
 
 #### K = 5.979e+10
 
-#### Overall, in this exercise I have shown that the data does align with the model. However, there is a slight difference due to differences in the values chosen and the actual population sizes. 
+#### Overall, in this exercise I have shown that the data does align with the model. 
 
 # Question 2: Calculating population size at t = 4980 
 
 #### Given the estimates for initial population size and the population growth rate are: 
 
-N0 = 6.903e+00
+N0 = 995.256
 
 r = 9.990e-03
 
 #### Using the exponential growth formula: N(t) = N0e^rt I can calculate the population size at t= 4980 by substituting these numbers into this formula. 
 ```{r echo=TRUE}
-N(t) = 6.903e+00 x e^ ((9.990e-03) x 4980)
+N(t) = 995.256 x e^ ((9.990e-03) x 4980)
 
-N0 <- 6.903e+00
+N0 <- 995.256
 r <- 9.990e-03
 t <- 4980
 
 N_4980_exp <- N0 * exp(r * t)
 ```
-N(t) = 2.78788725821951e+22 
+N(t) = 4.019501e+24 
 
 #### Then I looked at the population size at t = 4980 under a logistic growth model when the carying capacity (K) = 5.979e+10: 
 ```{r echo=TRUE}
-N0 <- 6.903e+00
+N0 <- 995.256
 r <- 9.990e-03
 t <- 4980
 K <- 5.979e+10
@@ -146,13 +146,13 @@ K <- 5.979e+10
 N_4980_logistic <- K / (1 + ((K - N0) / N0) * exp(-r * t))
 ```
 
-N(t) = 59,789,999,999.8718       
+N(t) = 5.979e+10       
 
-#### Population size at t = 4980 under an exponential growth model = 2.78788725821951e+22 
+#### Population size at t = 4980 under an exponential growth model = 4.019501e+24 
 
-#### Population size at t = 4980 under a logistic growth model = 59789999999.8718
+#### Population size at t = 4980 under a logistic growth model = 5.979e+10
 
-As we can see from these values, the population is much larger at time 4980 minutes under an exponential growth model comapred to a logitsic growth model. This is because under a logistic growth model the population can only grow up to a certain point (the carying capacity), whereas in the exponential growth model the population can keep growing exponentially. Under the logistic growth model the population has nearly reached carrying capacity by time 4980 minutes. Under the exponential growth model the popualtion has exceeded the carying capcity which is not a reasonable thing to predict. This is because in the real world the population would stop growing once it reaches the carying capacity because there are limited resources and a limited amount of space for a population to use.
+As we can see from these values, the population is much larger at time 4980 minutes under an exponential growth model comapred to a logitsic growth model. This is because under a logistic growth model the population can only grow up to a certain point (the carying capacity), whereas in the exponential growth model the population can keep growing exponentially. Under the logistic growth model the population has reached carrying capacity by time 4980 minutes. Under the exponential growth model the popualtion has exceeded the carying capcity which is not a reasonable thing to predict. This is because in the real world the population would stop growing once it reaches the carying capacity because there are limited resources and a limited amount of space for a population to use.
 
 # Question 3: making a graph to compare the exponential and logistic growth curves
 
