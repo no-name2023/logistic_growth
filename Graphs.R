@@ -60,7 +60,7 @@ logistic_fun <- function(t) {
   
 }
 
-N0 <- 6.903e+00 #
+N0 <- 995.256 #
 
 r <- 9.990e-03 #
 
@@ -78,13 +78,13 @@ sink(file = "package-versions.txt")
 sessionInfo()
 sink()
 
-N0 <- 6.903e+00
+N0 <- 995.256
 r <- 9.990e-03
 t <- 4980
 
 N_4980_exp <- N0 * exp(r * t)
 
-N0 <- 6.903e+00
+N0 <- 995.256
 r <- 9.990e-03
 t <- 4980
 K <- 5.979e+10
@@ -114,7 +114,7 @@ exponential_growth <- function(t, N0, r) {
 }
 
 # My parameter estimates
-N0 <- 6.903e+00
+N0 <- 995.256
 r <- 9.990e-03
 K <- 5.979e+10
 
@@ -143,5 +143,5 @@ ggplot(data_plot, aes(x = Time, y = Population, color = Model)) +
     y = "Population Size"
   ) +
   theme_minimal() +
-  scale_y_continuous(trans = 'log10', limits = c(6.903e+00, 1e12))  # Adjust limits as needed
+  scale_y_continuous(trans = 'log10', limits = c(995.256, 1e12))  
 
